@@ -1,0 +1,13 @@
+version: '3'
+services:
+  php-fpm:
+    image: my_blogg_php_image
+    container_name: my_blogg_php_container
+    build:
+      context: ./
+      dockerfile: local.dockerfile
+    restart: always
+    volumes:
+    - .:/var/www/app
+    environment:
+      APP_KEY: base64:ACltFWBCAITDKa2M2N8hm0R54aYfILCh6LHh5wsRmHM=
